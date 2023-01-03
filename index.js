@@ -10,6 +10,7 @@ app.use(express.json());
 app.use("/home", home);
 
 app.post("/test", (req, res) => {
+    const userPolicyNo = 'abc12345';
     const userOtp = '9999';
     const dialogflowReq = req.body;
 
@@ -22,7 +23,7 @@ app.post("/test", (req, res) => {
 
     let response = '';
 
-    if (otp === userOtp) {
+    if ((otp === userOtp) && (policyNo == userPolicyNo)) {
         response = 'Correct otp';
     } else {
         response = 'Wrong otp';

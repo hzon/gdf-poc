@@ -10,9 +10,10 @@ app.use(express.json());
 app.use("/home", home);
 
 app.post("/test", (req, res) => {
-    res.json({requestBody: req.body})
-    // const userOtp = '9999';
-    // const dialogflowReq = JSON.parse(req.body);
+    const userOtp = '9999';
+    const dialogflowReq = req.body;
+
+    res.json({requestBody: dialogflowReq});
 
     // res.send(dialogflowReq);
 

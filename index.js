@@ -13,12 +13,10 @@ app.post("/test", (req, res) => {
     const userOtp = '9999';
     const dialogflowReq = req.body;
 
-    res.json({requestBody: dialogflowReq});
-
-    // res.send(dialogflowReq);
-
     // const policyNo = dialogflowReq.queryResult.parameters.policy_no;
-    // const otp = dialogflowReq.queryResult.parameters.otp;
+    const otp = dialogflowReq.queryResult.parameters.otp;
+
+    res.json({requestBody: otp});
 
     // let newDate = new Date();
     // newDate.setTime(Date.now());

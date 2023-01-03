@@ -24,9 +24,9 @@ app.post("/test", (req, res) => {
     let response = '';
 
     if ((otp === userOtp) && (policyNo == userPolicyNo)) {
-        response = 'Correct otp';
+        response = 'Correct policy number and otp';
     } else {
-        response = 'Wrong otp';
+        response = 'The provided data don\'t match our records';
     }
 
     res.json({

@@ -13,34 +13,32 @@ app.post("/test", (req, res) => {
     const userOtp = '9999';
     const dialogflowReq = req.body;
 
-    // const policyNo = dialogflowReq.queryResult.parameters.policy_no;
+    const policyNo = dialogflowReq.queryResult.parameters.policy_no;
     const otp = dialogflowReq.queryResult.parameters.otp;
 
-    res.json({requestBody: otp});
+    let newDate = new Date();
+    newDate.setTime(Date.now());
+    dateString = newDate.toUTCString();
 
-    // let newDate = new Date();
-    // newDate.setTime(Date.now());
-    // dateString = newDate.toUTCString();
+    let response = '';
 
-    // let response = '';
+    if (otp === userOtp) {
+        response = 'Correct otp';
+    } else {
+        response = 'Wrong otp';
+    }
 
-    // if (otp === userOtp) {
-    //     response = 'Correct otp';
-    // } else {
-    //     response = 'Wrong otp';
-    // }
-
-    // res.json({
-    //     "fulfillmentMessages": [
-    //         {
-    //             "text": {
-    //                 "text": [
-    //                     response
-    //                 ]
-    //             }
-    //         }
-    //     ]
-    // });
+    res.json({
+        "fulfillmentMessages": [
+            {
+                "text": {
+                    "text": [
+                        response
+                    ]
+                }
+            }
+        ]
+    });
 })
 
 app.get("/test", (req, res) => {

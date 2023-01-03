@@ -62,7 +62,7 @@ app.get("/test", (req, res) => {
     //     response = 'Wrong otp';
     // }
 
-    res.json(response);
+    res.json("heyyy");
 
     // res.json({
     //     "fulfillmentMessages": [

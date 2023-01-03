@@ -44,10 +44,10 @@ app.post("/test", (req, res) => {
 })
 
 app.get("/test", (req, res) => {
-    // const userOtp = '9999';
-    // const dialogflowReq = JSON.parse(req.body);
+    const userOtp = '9999';
+    const dialogflowReq = JSON.parse(req.body);
 
-    res.send("hey");
+    res.send(dialogflowReq);
 
     // const policyNo = dialogflowReq.queryResult.parameters.policy_no;
     // const otp = dialogflowReq.queryResult.parameters.otp;

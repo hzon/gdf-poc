@@ -45,7 +45,7 @@ app.post("/test", (req, res) => {
 
 app.get("/test", (req, res) => {
     const userOtp = '9999';
-    const dialogflowReq = JSON.parse(req.body);
+    // const dialogflowReq = JSON.parse(req.body);
 
     // const policyNo = dialogflowReq.queryResult.parameters.policy_no;
     // const otp = dialogflowReq.queryResult.parameters.otp;
@@ -62,7 +62,7 @@ app.get("/test", (req, res) => {
     //     response = 'Wrong otp';
     // }
 
-    res.json(dialogflowReq);
+    res.json(req);
 
     // res.json({
     //     "fulfillmentMessages": [
